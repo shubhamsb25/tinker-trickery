@@ -1,0 +1,18 @@
+Finding list of words from a file using regex:
+
+	# grep -o -E "[A-Z]{3}_[A-Z]{2}_[0-9]{14}" file.txt
+
+	This will spit out all the words matching the regex
+
+
+To find out only unique words from the above result we can use "sort" and "uniq" utilities:
+
+	# grep -o -E "[A-Z]{3}_[A-Z]{2}_[0-9]{14}" file.txt | sort | uniq
+	
+	This will give unique words matching the specified regex
+
+If we want to find out occurences of all the words matching the regex, we can use count flag of "uniq" utility:
+
+	# grep -o -E "[A-Z]{3}_[A-Z]{2}_[0-9]{14}" file.txt | sort | uniq -c
+	
+	The will give all matching words with their occurences in file
